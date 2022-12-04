@@ -1,7 +1,6 @@
 package effectivejava.chapter6.item39.annotationwitharrayparameter;
-import effectivejava.chapter6.item39.markerannotation.Test;
 
-import java.lang.reflect.*;
+import java.lang.reflect.Method;
 
 // Program to process marker annotations and annotations with array parameter (Page 185)
 public class RunTests {
@@ -10,19 +9,6 @@ public class RunTests {
         int passed = 0;
         Class<?> testClass = Class.forName(args[0]);
         for (Method m : testClass.getDeclaredMethods()) {
-            if (m.isAnnotationPresent(Test.class)) {
-                tests++;
-                try {
-                    m.invoke(null);
-                    passed++;
-                } catch (InvocationTargetException wrappedExc) {
-                    Throwable exc = wrappedExc.getCause();
-                    System.out.println(m + " failed: " + exc);
-                } catch (Exception exc) {
-                    System.out.println("Invalid @Test: " + m);
-                }
-            }
-
             // Code to process annotations with array parameter (Page 185)
             if (m.isAnnotationPresent(ExceptionTest.class)) {
                 tests++;
@@ -32,8 +18,7 @@ public class RunTests {
                 } catch (Throwable wrappedExc) {
                     Throwable exc = wrappedExc.getCause();
                     int oldPassed = passed;
-                    Class<? extends Throwable>[] excTypes =
-                            m.getAnnotation(ExceptionTest.class).value();
+                    Class<? extends Throwable>[] excTypes = m.getAnnotation(ExceptionTest.class).value();
                     for (Class<? extends Throwable> excType : excTypes) {
                         if (excType.isInstance(exc)) {
                             passed++;
@@ -45,7 +30,6 @@ public class RunTests {
                 }
             }
         }
-        System.out.printf("Passed: %d, Failed: %d%n",
-                passed, tests - passed);
+        System.out.printf("Passed: %d, Failed: %d%n", passed, tests - passed);
     }
 }

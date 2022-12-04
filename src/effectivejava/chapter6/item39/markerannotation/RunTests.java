@@ -4,6 +4,7 @@ package effectivejava.chapter6.item39.markerannotation;
 
 import java.lang.reflect.*;
 
+@SuppressWarnings("ALL")
 public class RunTests {
     public static void main(String[] args) throws Exception {
         int tests = 0;
@@ -19,7 +20,7 @@ public class RunTests {
                     Throwable exc = wrappedExc.getCause();
                     System.out.println(m + " failed: " + exc);
                 } catch (Exception exc) {
-                    System.out.println("Invalid @Test: " + m);
+                    System.out.println("Invalid @Test: " + m + " : "  + exc);
                 }
             }
         }
