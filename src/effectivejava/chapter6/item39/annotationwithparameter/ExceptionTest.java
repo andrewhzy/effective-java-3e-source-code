@@ -9,5 +9,6 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 public @interface ExceptionTest {
-    Class<? extends Throwable> value();
+    Class<? extends Throwable> value1();
+    Class<? extends Number> value2();
 }

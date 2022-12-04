@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 // Program containing repeatable annotations (Page 186)
+@SuppressWarnings("all")
 public class Sample4 {
     @ExceptionTest(ArithmeticException.class)
     public static void m1() {  // Test should pass
