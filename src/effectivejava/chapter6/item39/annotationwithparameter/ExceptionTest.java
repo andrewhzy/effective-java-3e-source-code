@@ -11,4 +11,6 @@ import java.lang.annotation.*;
 public @interface ExceptionTest {
     Class<? extends Throwable> value1();
     Class<? extends Number> value2();
+
+    int integer();
 }

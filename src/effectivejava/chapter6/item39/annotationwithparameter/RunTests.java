@@ -34,6 +34,8 @@ public class RunTests {
                 } catch (InvocationTargetException wrappedEx) {
                     Throwable exc = wrappedEx.getCause();
                     Class<? extends Throwable> excType = m.getAnnotation(ExceptionTest.class).value1();
+                    int i = m.getAnnotation(ExceptionTest.class).integer();
+                    System.out.println(i);
                     if (excType.isInstance(exc)) {
                         passed++;
                     } else {
