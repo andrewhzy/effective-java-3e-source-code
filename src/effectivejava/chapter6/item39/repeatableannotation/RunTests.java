@@ -7,7 +7,8 @@ public class RunTests {
     public static void main(String[] args) throws Exception {
         int tests = 0;
         int passed = 0;
-        Class<?> testClass = Class.forName(args[0]);
+        String className = "effectivejava.chapter6.item39.repeatableannotation.Sample4";
+        Class<?> testClass = Class.forName(className);
         for (Method m : testClass.getDeclaredMethods()) {
             // Processing repeatable annotations (Page 187)
             if (m.isAnnotationPresent(ExceptionTest.class)
