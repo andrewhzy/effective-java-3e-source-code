@@ -7,7 +7,7 @@ public class RunTests {
     public static void main(String[] args) throws Exception {
         int tests = 0;
         int passed = 0;
-        Class<?> testClass = Class.forName(args[0]);
+        Class<?> testClass = Class.forName("effectivejava.chapter6.item39.annotationwitharrayparameter.Sample3");
         for (Method m : testClass.getDeclaredMethods()) {
             // Code to process annotations with array parameter (Page 185)
             if (m.isAnnotationPresent(ExceptionTest.class)) {
