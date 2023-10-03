@@ -32,17 +32,17 @@ public class ColorPoint extends Point {
 //        return super.equals(o) && ((ColorPoint) o).color == color;
 //    }
 
-    public static void main(String[] args) {
-        // First equals function violates symmetry (Page 42)
-        Point p = new Point(1, 2);
-        ColorPoint cp = new ColorPoint(1, 2, Color.RED);
-        System.out.println(p.equals(cp) + " " + cp.equals(p));
-
-        // Second equals function violates transitivity (Page 42)
-        ColorPoint p1 = new ColorPoint(1, 2, Color.RED);
-        Point p2 = new Point(1, 2);
-        ColorPoint p3 = new ColorPoint(1, 2, Color.BLUE);
-        System.out.printf("%s %s %s%n",
-                          p1.equals(p2), p2.equals(p3), p1.equals(p3));
-    }
+//    public static void main(String[] args) {
+//        // First equals function violates symmetry (Page 42)
+//        Point p = new Point(1, 2);
+//        ColorPoint cp = new ColorPoint(1, 2, Color.RED);
+//        System.out.println(p.equals(cp) + " " + cp.equals(p));
+//
+//        // Second equals function violates transitivity (Page 42)
+//        ColorPoint p1 = new ColorPoint(1, 2, Color.RED);
+//        Point p2 = new Point(1, 2);
+//        ColorPoint p3 = new ColorPoint(1, 2, Color.BLUE);
+//        System.out.printf("%s %s %s%n",
+//                          p1.equals(p2), p2.equals(p3), p1.equals(p3));
+//    }
 }

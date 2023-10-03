@@ -18,8 +18,7 @@ public class Max {
 //    }
 
 //    // Returns maximum value in collection as an Optional<E> (Page 250)
-//    public static <E extends Comparable<E>>
-//    Optional<E> max(Collection<E> c) {
+//    public static <E extends Comparable<E>> Optional<E> max(Collection<E> c) {
 //        if (c.isEmpty())
 //            return Optional.empty();
 //
@@ -32,8 +31,7 @@ public class Max {
 //    }
 
     // Returns max val in collection as Optional<E> - uses stream (Page 250)
-    public static <E extends Comparable<E>>
-    Optional<E> max(Collection<E> c) {
+    public static <E extends Comparable<E>>    Optional<E> max(Collection<E> c) {
         return c.stream().max(Comparator.naturalOrder());
     }
 

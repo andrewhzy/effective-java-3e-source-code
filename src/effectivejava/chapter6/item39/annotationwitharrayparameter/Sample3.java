@@ -24,7 +24,7 @@ public class Sample3 {
     }  // Should fail (no exception)
 
     // Code containing an annotation with an array parameter (Page 185)
-    @ExceptionTest({IndexOutOfBoundsException.class, NullPointerException.class})
+    @ExceptionTest({IndexOutOfBoundsException.class, NullPointerException.class,ArithmeticException.class})
     public static void doublyBad() {   // Should pass
         List<String> list = new ArrayList<>();
 
